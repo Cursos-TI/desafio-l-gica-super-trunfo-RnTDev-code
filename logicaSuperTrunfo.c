@@ -1,43 +1,68 @@
 #include <stdio.h>
-
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+//OS ENUNCIADOS DO DESAFFIO ESTAO DIFERENTES NO SAVA E GITHUB!!! FIZ BASEADO NO README DO GITHUB.
+struct Carta {
+    char CodigoDaCarta[20];
+    char NomeDaCidade[25];
+    int populacao;
+    float area;
+    float pib;
+    int PontosTuristicos;
+};
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    
+    struct Carta carta1;
+    struct Carta carta2;
 
     
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    printf("--- Cadastro da Primeira Carta ---\n");
+    printf("Digite o codigo da carta: ");
+    scanf("%s", carta1.CodigoDaCarta);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", carta1.NomeDaCidade);
+    printf("Digite a populacao: ");
+    scanf("%d", &carta1.populacao);
+    printf("Digite a area (em km2): ");
+    scanf("%f", &carta1.area);
+    printf("Digite o PIB (em bilhoes): ");
+    scanf("%f", &carta1.pib);
+    printf("Digite o numero de Pontos Turisticos: ");
+    scanf("%d", &carta1.PontosTuristicos);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("\n");
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+   
+    printf("--- Cadastro da Segunda Carta ---\n");
+    printf("Digite o codigo da carta: ");
+    scanf("%s", carta2.CodigoDaCarta);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", carta2.NomeDaCidade);
+    printf("Digite a populacao: ");
+    scanf("%d", &carta2.populacao);
+    printf("Digite a area (em km2): ");
+    scanf("%f", &carta2.area);
+    printf("Digite o PIB (em bilhoes): ");
+    scanf("%f", &carta2.pib);
+    printf("Digite o numero de Pontos Turisticos: ");
+    scanf("%d", &carta2.PontosTuristicos);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("\n\n--- DADOS CADASTRADOS ---\n");
+    printf("Carta 1: %s (%s) - Populacao: %d\n", carta1.NomeDaCidade, carta1.CodigoDaCarta, carta1.populacao);
+    printf("Carta 2: %s (%s) - Populacao: %d\n", carta2.NomeDaCidade, carta2.CodigoDaCarta, carta2.populacao);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    //COMPARAÇÃO USANDO IF - ELSE SEM TRATAR O EMPATE. PREFIRO FAZER O SIMPLES NESSE NIVEL
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("\n==== RESULTADO DA BATALHA (POPULACAO) ====\n");
+
+    
+    if (carta1.populacao > carta2.populacao) {
+        printf("VENCEDOR: Carta 1 - %s!\n", carta1.NomeDaCidade);
+    }
+    else {
+        // Se a carta 1 não for maior, assumimos que a carta 2 venceu.
+        // Este bloco será executado tanto se a carta 2 vencer quanto em caso de empate.
+        printf("VENCEDOR: Carta 2 - %s!\n", carta2.NomeDaCidade);
+    }
 
     return 0;
 }
